@@ -1,42 +1,12 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, Text, View } from 'react-native';
-import ButtonIcon from '../components/home/buttons/ButtonIcon';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import AvatarUser from '../components/home/avatar/Avatar';
+import { SafeAreaView, View } from 'react-native';
+import Header from '../components/Header';
 import { ButtonHomeOption } from '../components/home/buttons/ButtonHomeOption';
 
 export default function HomePage({ navigation }: any) {
   return (
     <SafeAreaView>
-      <View className='w-full h-auto flex flex-row items-center justify-between bg-[#BC2449] px-[24px] py-[28px]'>
-        <Text className='text-[34px] font-[600] text-[#fff] leading-[50px] tracking-[0.25px]'>
-          Aura Lễ Tân
-        </Text>
-        <View className='flex w-auto flex-row items-center justify-around'>
-          <ButtonIcon icon={'home'} />
-          <ButtonIcon icon={'info-circle'} />
-          <ButtonIcon icon={'bell'} />
-          <View className='flex flex-row items-center justify-center ml-[20px]'>
-            <AvatarUser />
-            <View>
-              <Text className='ml-[8px] text-[14px] text-[#fff] leading-[20px] tracking-[0.25px] font-[400]'>
-                Nguyen The Loc
-              </Text>
-              <Text className='ml-[8px] text-[14px] text-[#fff] leading-[20px] tracking-[0.25px] font-[400]'>
-                LỄ TÂN
-              </Text>
-            </View>
-            <Icon
-              style={{ marginLeft: 100 }}
-              name={'angle-down'}
-              size={24}
-              color={'#fff'}
-            />
-          </View>
-        </View>
-      </View>
-      {/* <View className='mt-[156px] px-[48px] flex flex-cols w-full'> */}
+      <Header />
       <View className=' flex flex-row  w-full mt-[50px] px-[48px] items-center justify-center'>
         <ButtonHomeOption
           label={'Booking'}
@@ -58,7 +28,6 @@ export default function HomePage({ navigation }: any) {
           }
         />
       </View>
-      {/* </View> */}
     </SafeAreaView>
   );
 }
