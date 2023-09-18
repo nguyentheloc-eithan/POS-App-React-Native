@@ -7,6 +7,7 @@ import BookingPage from './bookings';
 import { supabase } from '../services/supabse/supabase';
 import useFetchCategories from '../common/stores/category';
 import { ICategories } from '../common/types/category.interface';
+import BookingManager from './managements';
 
 const Stack = createNativeStackNavigator();
 NativeWindStyleSheet.setOutput({
@@ -52,6 +53,10 @@ export default function RootComponent() {
         <Stack.Screen
           name='Bookings'
           component={BookingPage}
+        />
+        <Stack.Screen
+          name='BookingsManager'
+          component={BookingManager}
         />
       </Stack.Navigator>
     </NavigationContainer>

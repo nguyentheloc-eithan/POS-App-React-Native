@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 interface ButtonProps {
   onPress?: any;
   text: string;
-  icon?: string;
+  icon: string;
   classNameText?: string;
   iconSize?: number;
   classNameBtn?: string;

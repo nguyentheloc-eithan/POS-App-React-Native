@@ -12,9 +12,11 @@ export const ButtonHomeOption = ({
   onClick,
 }: ButtonHomeOptionProps) => {
   return (
-    <TouchableOpacity onPress={onClick}>
-      <View className='relative w-[481px] mx-[48px] h-[581px] flex items-center justify-center'>
-        <View className='absolute top-[90px] z-[50] h-[160px] w-[160px] rounded-[240px] bg-[#BC2449] p-[40px] flex items-center justify-center overflow-hidden'>
+    <TouchableOpacity
+      onPress={onClick}
+      className='h-[571px]'>
+      <View className='relative w-[481px] mx-[48px] h-[521px] flex items-center justify-center'>
+        <View className='absolute top-[70px] z-[50] h-[160px] w-[160px] rounded-[240px] bg-[#BC2449] px-[48px] flex items-center justify-center overflow-hidden'>
           <Image
             style={{
               width: 80,
