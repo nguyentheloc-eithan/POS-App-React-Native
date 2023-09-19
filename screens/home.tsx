@@ -7,11 +7,14 @@ import { ButtonCustom } from '../components/button/ButtonCustom';
 export default function HomePage({ navigation }: any) {
   const [activeBookingManager, setActiveBookingManager] =
     useState<boolean>(false);
+  const navigateHome = () => {
+    navigation.navigate('Home');
+  };
   const [activeManager, setActiveManager] = useState<boolean>(false);
   return (
-    <SafeAreaView>
+    <View className='h-full'>
       <Header />
-      <View className=' flex flex-row  w-full mt-[50px]  items-center justify-center'>
+      <View className=' flex flex-row w-full mt-[50px] items-center justify-center'>
         <ButtonHomeOption
           label={'Booking'}
           icon={
@@ -21,12 +24,14 @@ export default function HomePage({ navigation }: any) {
         />
 
         <ButtonHomeOption
+          active={activeBookingManager}
           label={'Quản lý'}
           icon={
             'https://ucarecdn.com/3888da38-5287-4fc4-93dd-39dd502db3d1/-/scale_crop/300x300/-/format/auto/-/quality/smart/'
           }
           onClick={() => {
             setActiveManager((prev) => !prev);
+            setActiveBookingManager((prev) => !prev);
           }}
         />
 
@@ -38,32 +43,32 @@ export default function HomePage({ navigation }: any) {
         />
       </View>
       {activeManager == true ? (
-        <View className='px-[48px] flex flex-start items-center justify-center mb-[60px] gap-y-[122px]'>
+        <View className='px-[48px] flex ml-[50px] flex-start items-center justify-center gap-y-[122px] mt-[30px]'>
           <ButtonCustom
             text={'Check-in đặt hẹn'}
             onPress={() => {
-              navigation.navigate('BookingsManager'), setActiveManager(false);
+              navigation.navigate('Check-in'), setActiveManager(false);
             }}
-            classNameBtn='bg-[#fff] rounded-[8px] w-[481px]'
-            classNameText='text-[34px] text-center font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
+            classNameBtn='bg-[#fff]  w-[300px]'
+            classNameText='text-[24px] text-center font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
             icon={''}
           />
           <ButtonCustom
             icon={''}
             text={'Quản lý tour'}
-            classNameBtn='bg-[#fff]  my-[12px] rounded-[8px]  w-[481px]'
-            classNameText='text-[34px] font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
+            classNameBtn='bg-[#fff]  my-[12px] w-[300px]'
+            classNameText='text-[24px] font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
           />
           <ButtonCustom
             icon={''}
             text={'Quản lý đơn hàng'}
-            classNameBtn='bg-[#fff] rounded-[8px]  w-[481px]'
-            classNameText='text-[34px] font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
+            classNameBtn='bg-[#fff] w-[300px]'
+            classNameText='text-[24px] font-[600] leading-[50px] tracking-[0.25px] text-[#36383A]'
           />
         </View>
       ) : (
         <></>
       )}
-    </SafeAreaView>
+    </View>
   );
 }

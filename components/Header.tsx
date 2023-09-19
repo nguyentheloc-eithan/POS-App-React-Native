@@ -3,7 +3,10 @@ import { View, Text } from 'react-native';
 import ButtonIcon from './home/buttons/ButtonIcon';
 import AvatarUser from './home/avatar/Avatar';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+type HeaderProps = {
+  //just for dev test, will be change later
+  onClickBackHome?: any;
+};
 const Header = () => {
   return (
     <View className='w-full h-auto flex flex-row items-center justify-between bg-[#BC2449] px-[24px] py-[28px]'>

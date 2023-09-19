@@ -7,12 +7,11 @@ import BookingPage from './bookings';
 import { supabase } from '../services/supabse/supabase';
 import useFetchCategories from '../common/stores/category';
 import { ICategories } from '../common/types/category.interface';
-import BookingManager from './managements';
+
+import CheckIn from './managements/check-in';
 
 const Stack = createNativeStackNavigator();
-NativeWindStyleSheet.setOutput({
-  default: 'native',
-});
+
 export default function RootComponent() {
   const { setAllCategories } = useFetchCategories();
   useEffect(() => {
@@ -21,6 +20,7 @@ export default function RootComponent() {
         .from('categories')
         .select('*')
         .eq('active', true);
+
       if (error) {
         return;
       }
@@ -55,8 +55,8 @@ export default function RootComponent() {
           component={BookingPage}
         />
         <Stack.Screen
-          name='BookingsManager'
-          component={BookingManager}
+          name='Check-in'
+          component={CheckIn}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -4,23 +4,28 @@ type ButtonHomeOptionProps = {
   label: string;
   icon: string;
   onClick?: any;
+  active?: boolean;
 };
 
 export const ButtonHomeOption = ({
   label,
   icon,
   onClick,
+  active,
 }: ButtonHomeOptionProps) => {
   return (
     <TouchableOpacity
       onPress={onClick}
-      className='h-[571px]'>
-      <View className='relative w-[481px] mx-[48px] h-[521px] flex items-center justify-center'>
-        <View className='absolute top-[70px] z-[50] h-[160px] w-[160px] rounded-[240px] bg-[#BC2449] px-[48px] flex items-center justify-center overflow-hidden'>
+      className='h-fit'>
+      <View className='relative w-full mx-[24px] h-[300px] flex items-center justify-center'>
+        <View
+          className={`absolute top-[95px] z-[50] h-[120px] w-[120px] rounded-[150px] ${
+            active ? 'bg-[#fff]' : 'bg-[#BC2449]'
+          }   px-[48px] flex items-center justify-center overflow-hidden`}>
           <Image
             style={{
-              width: 80,
-              height: 80,
+              width: 70,
+              height: 70,
               objectFit: 'cover',
             }}
             source={{
@@ -28,8 +33,14 @@ export const ButtonHomeOption = ({
             }}
           />
         </View>
-        <View className='bg-[#fff] w-full h-[232px] rounded-[16px] flex items-center justify-center'>
-          <Text className='text-[48px] font-[600] leading-[72px] text-[#36383A]'>
+        <View
+          className={`${
+            active ? 'bg-[#BC2449]' : 'bg-[#fff]'
+          }  w-[300px] h-[132px] rounded-[16px] flex items-center justify-center top-[100px]`}>
+          <Text
+            className={`text-[36px] font-[600] leading-[72px] ${
+              active ? 'text-[#fff]' : 'text-[#36383A]'
+            }`}>
             {label}
           </Text>
         </View>

@@ -15,7 +15,7 @@ export const ButtonCustom = (props: ButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View
-        className={`flex flex-row items-center ${
+        className={`flex flex-row items-center rounded-[8px] ${
           icon !== '' ? 'justify-between gap-x-[12px]' : 'justify-center'
         } p-[12px]  ${classNameBtn}`}>
         <Text className={classNameText}>{text}</Text>

@@ -40,12 +40,12 @@ const BookingPage = () => {
           </View>
         </View>
         <View className='flex ml-[24px] rounded-[8px] w-[450px] h- full'>
-          <View className='flex flex-row items-center justify-between rounded-t-[8px] mb-[4px] h-[84px] px-[24px] bg-[#fff]'>
+          <View className='flex flex-row items-center justify-between rounded-[8px] mb-[4px] h-[84px] px-[24px] bg-[#fff]'>
             <ButtonCustom
               classNameText={
                 'text-[16px] font-[400] leading-[24px] tracking-[0.5px]'
               }
-              classNameBtn={'border border-[#BC2449] rounded-[8px]'}
+              classNameBtn={'border border-[#BC2449] '}
               text={'Đơn mới'}
               icon={'plus'}
               iconSize={24}
@@ -60,8 +60,9 @@ const BookingPage = () => {
                 classNameText={
                   'text-[16px] font-[400]  tracking-[0.5px]  text-[#fff]'
                 }
-                classNameBtn={'bg-[#BC2449] rounded-[8px]'}
+                classNameBtn={'bg-[#BC2449]'}
                 text={'Tạo booking'}
+                icon={''}
               />
             </View>
           </View>

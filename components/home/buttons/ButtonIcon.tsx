@@ -8,7 +8,7 @@ interface ButtonIconProps {
 const ButtonIcon = (props: ButtonIconProps) => {
   const { icon, onClick } = props;
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onClick}>
       <View className='h-[40px] mx-[8px] px-[8px] w-[40px] rounded-[36px] bg-[#fff] p-[8px] flex items-center justify-center'>
         <Icon
           name={icon}
